@@ -1,0 +1,25 @@
+.extranjeria {
+    padding-top: 12rem;
+}
+
+
+.section {
+    padding: 3rem 0;
+    background: var(--blanco);
+}
+
+
+.tituloDGT {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    color: var(--azul);
+}
+
+
+@media (max-width: 600px) {
+    .extranjeria {
+        padding-top: 7rem;
+    }
+}

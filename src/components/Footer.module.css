@@ -1,0 +1,118 @@
+.footer {
+    background-color: var(--azul);
+    color: white;
+    padding: 2rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.phoneGroup {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.contact a:hover {
+    text-decoration: none;
+}
+
+
+@media (max-width: 1200px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .phoneIcon {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .logoSection {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .nav {
+        flex-direction: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+    .contact {
+        flex-direction: initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+    }
+
+
+}
+
+@media (max-width: 597px) {
+    .navLink {
+        font-size: 0.8rem;
+    }
+
+    .contact a {
+        font-size: 1rem;
+    }
+
+    .phoneGroup span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 425px) {
+
+    .nav {
+    flex-direction: column;
+}
+}

@@ -1,0 +1,42 @@
+.extranjeria {
+    padding-top: 12rem;
+}
+
+
+.section {
+    padding: 3rem 0;
+    background: var(--blanco);
+}
+
+
+.tituloDGT {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    color: var(--azul);
+}
+
+.listaDivorcio {
+    font-size: 1.5rem;
+    color: var(--gris);
+    padding: 0 1rem;
+    margin-top: 6rem;
+}
+
+.listaDivorcio li {
+    margin-bottom: 3rem;}
+
+@media (max-width: 767px) {
+
+    .listaDivorcio {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .extranjeria {
+        padding-top: 7rem;
+    }
+}

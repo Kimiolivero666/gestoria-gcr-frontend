@@ -1,0 +1,15 @@
+:root {
+  --font-raleway: "Raleway", sans-serif;
+  --azul: #1F65E7;
+  --celeste: #3FA9F5;
+  --blanco: #FFF;
+  --gris: #4d4d4d;
+  --azulHover: #054677;
+  --verde: #8EA371;
+  --rosado: #DC3E78;
+  --morado: #6D39BB;
+}
+
+body {
+  font-family: var(--font-raleway);
+}

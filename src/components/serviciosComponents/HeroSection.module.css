@@ -1,0 +1,64 @@
+/* Contenedor principal para definir la altura y la disposición interna */
+.heroContainer {
+  height: 400px;
+  /* Altura deseada */
+  width: 100%;
+  position: relative;
+
+  /* Usamos Flexbox para la disposición en dos columnas */
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bloque blanco con el texto (Text Block) */
+.textBlock {
+  width: 40%;
+  /* Ocupa el 50% del ancho base */
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  /* Centrado vertical */
+  padding-left: 5%;
+
+  /* CLAVE: Esto jala el siguiente elemento hacia la izquierda, creando la superposición */
+  z-index: 10;
+  /* Asegura que esté por encima de la imagen */
+  margin-right: -100px;
+  /* Superposición de 100px. Ajusta este valor si quieres más o menos. */
+}
+
+/* Bloque azul con la imagen (Image Block) */
+.imageBlock {
+  flex-grow: 1;
+  /* Ocupa el espacio restante */
+
+  background-image: url('/images/imgServicios.jpg');
+  /* ⚠️ Reemplaza con tu ruta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+/* Estilos para el texto */
+.heroTitle {
+  font-size: 4rem;
+  padding-right: 8rem;
+  font-weight: 400;
+  color: var(--gris);
+  background-color: var(--blanco);
+  position: absolute;
+  left: 30%;
+}
+
+/* responsive */
+
+@media (max-width: 600px) {
+  .heroTitle {
+    font-size: 3rem;
+    left: 10%;
+    padding-right: 5rem;
+  }
+}

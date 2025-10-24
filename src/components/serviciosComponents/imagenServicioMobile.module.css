@@ -1,0 +1,42 @@
+
+.card {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: 2rem;
+    padding: 1.5rem 0;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.image{
+    display: none;
+}
+
+
+@media (max-width: 768px){
+
+    .card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 0 auto;}
+    
+    .imageContainer {
+    margin-top: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+    .image {
+    width: 100%;
+    max-width: 400px; /* 👈 todas tendrán este mismo ancho máximo */
+    height: 200px; /* 👈 mismo alto en todos los casos */
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto;
+    display: block;
+}
+}

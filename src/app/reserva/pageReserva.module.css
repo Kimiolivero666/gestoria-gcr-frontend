@@ -1,0 +1,8 @@
+.parrafoCita{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+color: var(--azul);
+}

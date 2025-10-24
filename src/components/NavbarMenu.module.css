@@ -1,0 +1,210 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    border-radius: 50px;
+    margin-top: 3rem;
+    width: 80%;
+    margin-left: 10%;
+    z-index: 1050;
+}
+
+/* ✅ Estilo del navbar en el home */
+.homeNavbar {
+  background: transparent;
+}
+
+.homeNavbar .firstLink,
+.homeNavbar .linkMenu,
+.homeNavbar .iconBars {
+  color: var(--blanco);
+}
+
+/* ✅ Estilo del navbar en las demás páginas */
+.pageNavbar {
+  background: var(--blanco);
+  margin-top: 3rem;
+  border-radius: 0;
+}
+
+.pageNavbar .firstLink,
+.pageNavbar .linkMenu,
+.pageNavbar .iconBars {
+  color: var(--gris);
+}
+
+.pageNavbar .firstLink.activeLink,
+.pageNavbar .linkMenu.activeLink {
+  background: var(--azul);
+  color: var(--blanco);
+}
+
+
+.navbarContenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.brand {
+    margin-left: 30px;
+}
+
+.menuBox {
+    display: flex;
+    margin-right: 10px;
+    gap: 40px;
+}
+
+.textWhite {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
+.firstLink,
+.linkMenu {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: var(--blanco);
+    letter-spacing: 2px;
+}
+
+.firstLink:hover,
+.linkMenu:hover {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(5px);
+    padding: 10px;
+    color: var(--blanco);
+    background: var(--azul);
+    font-weight: 500;
+}
+
+.firstLink.activeLink,
+.linkMenu.activeLink {
+    padding: 10px;
+    transform: translateX(5px);
+    color: var(--blanco);
+    background: var(--azul);
+    font-weight: 500;
+}
+
+
+
+.iconBars {
+    color: var(--blanco);
+    font-size: 50px;
+    display: none;
+    padding: 5px;
+    margin-right: 20px;
+}
+
+.navbarImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* responsive */
+
+
+@media screen and (max-width: 1200px) {
+    .iconBars {
+        display: block;
+    }
+
+    .menuBox {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: var(--blanco);
+        align-items: center;
+    }
+
+    .menu {
+        width: 100%;
+        position: fixed; /* ← cambia a fixed */
+        top: 6rem;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background: var(--blanco);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%);
+        z-index: 2000;
+    }
+
+    .active {
+        transform: translateX(0);
+    }
+
+    .firstLink,
+    .linkMenu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 0px;
+        font-weight: 700;
+        color: var(--azul);
+        width: 250px;
+    }
+
+    .firstLink.activeLink,
+    .linkMenu.activeLink {
+        border-bottom: solid 4px var(--azul);
+    }
+
+
+  /* Cuando se abre el menú en el home, forzamos los colores oscuros o azules */
+  .homeNavbar .menuBox a {
+    color: var(--azul); 
+  }
+
+  .homeNavbar .menuBox .activeLink {
+    color: var(--blanco);
+  }
+
+.pageNavbar .menuBox a {
+    color: var(--azul); 
+}
+
+.pageNavbar .iconBars {
+    color: var(--azul);
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+    .textWhite {
+        font-size: 15px;
+    }
+
+    .navbar{
+        margin-top: 1rem;
+    }
+
+    .logo{
+    width: 50px;
+    height: 50px;
+}
+
+
+}
+
+/* Class to disable scrolling */
+.noScroll {
+    overflow: hidden;
+}

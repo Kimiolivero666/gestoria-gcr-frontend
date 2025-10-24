@@ -1,0 +1,36 @@
+/* ContactPromo.module.css */
+
+.promoContainer {
+  /* Fondo azul oscuro, similar a la imagen */
+  background-color: var(--azul); 
+  color: var(--blanco);
+  padding: 80px 20px; /* Padding grande para escritorio */
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.promoText {
+  font-size: 1.8rem; /* Fuente grande para escritorio */
+  font-weight: 800;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+
+
+
+/* --- Adaptabilidad (Responsiveness): Ajustes para pantallas más pequeñas (móviles y tablets) --- */
+@media (max-width: 768px) {
+  .promoContainer {
+    padding: 60px 15px; /* Reduce el padding */
+  }
+
+  .promoText {
+    font-size: 1.3rem; /* Reduce el tamaño de la fuente */
+    margin-bottom: 25px;
+  }
+  
+  .ctaButton {
+      padding: 10px 20px;
+      font-size: 1rem;
+  }
+}

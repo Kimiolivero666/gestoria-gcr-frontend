@@ -1,0 +1,61 @@
+.estanciaDeEstudio {
+    padding-top: 12rem;
+}
+
+.HeroEstanciaDeEstudio {
+    margin-bottom: 3rem;
+}
+
+.contenidoEstancia{
+    margin-top: 9rem;
+}
+
+.parrafoEstancia {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--gris);
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+}
+
+.listaEstancia {
+    font-size: 1.5rem;
+    color: var(--gris);
+    padding: 0 1rem;
+}
+
+.listaEstancia li {
+    margin-bottom: 3rem;
+}
+
+.subtituloEstancia{
+    color: var(--azul);
+    width: 100%;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+@media (max-width: 767px){
+    .parrafoEstancia {
+    font-size: 1rem;
+}
+.listaEstancia {
+    font-size: 1rem;
+}
+.subtituloEstancia{
+    font-size: 1.3rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+}
+
+@media (max-width: 600px){
+   .estanciaDeEstudio {
+    padding-top: 7rem;
+} 
+}

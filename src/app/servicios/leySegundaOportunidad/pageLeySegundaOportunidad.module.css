@@ -1,0 +1,17 @@
+.extranjeria {
+    padding-top: 12rem;
+}
+
+
+.section {
+    padding: 3rem 0;
+    background: var(--blanco);
+}
+
+
+
+@media (max-width: 600px) {
+    .extranjeria {
+        padding-top: 7rem;
+    }
+}

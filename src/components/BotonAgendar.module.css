@@ -1,0 +1,46 @@
+.cta {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  font-family: sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+   font-family: var(--font-raleway);
+}
+
+
+
+.top {
+  background-color: var(--azul); /* azul oscuro */
+  color: var(--blanco);
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.bottom {
+  background-color: var(--celeste); /* azul claro */
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-raleway);
+  letter-spacing: 4px;
+}
+
+
+.bottom:hover {
+  background-color: #0099cc; /* tono más oscuro al pasar el mouse */
+}

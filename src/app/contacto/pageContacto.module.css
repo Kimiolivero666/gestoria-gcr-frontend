@@ -1,0 +1,13 @@
+.contacto {
+    padding-top: 12rem;
+}
+
+.HeroSection {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 600px){
+   .contacto {
+    padding-top: 7rem;
+} 
+}

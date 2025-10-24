@@ -1,0 +1,75 @@
+.section {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Fila alineada arriba y sin gutters (quita separación horizontal) */
+.row {
+  margin-top: 3rem;
+  align-items: flex-start;
+  /* eliminar gutters de bootstrap solo para estas filas */
+  --bs-gutter-x: 0;
+}
+
+/* Columna del título */
+.titleCol {
+  display: flex;
+  align-items: start;        /* centra verticalmente si quieres */
+  justify-content: flex-end; /* empuja el contenido hacia la derecha del Col */
+  padding-right: 0 !important; /* anula padding de Bootstrap si lo hubiera */
+}
+
+/* Contenedor del título (título + línea) */
+.titleWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* todo a la derecha */
+  
+}
+
+/* Estilo del título */
+.title {
+  color: var(--azul);
+  font-weight: 900;
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  line-height: 1;
+  /* quitar align-items aquí (no aplica) */
+}
+
+/* Línea decorativa debajo del título */
+.underline {
+  width: 48px;
+  height: 4px;
+  background-color: var(--azul);
+  margin-top: 8px;
+  /* como el padre es flex con align-items:flex-end, la línea ya queda a la derecha */
+}
+
+/* Columna del contenido */
+.contentCol {
+  padding-left: 0;
+  color: var(--gris);
+  font-size: 1.5rem;
+}
+
+.contentC {
+  padding-left: 4rem; /* si quieres el contenido separado del titulo */
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .titleCol {
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .contentC {
+    padding-left: 5%;
+  }
+
+  .contentCol { font-size: 1rem; }
+  .title { font-size: 1.8rem; }
+}

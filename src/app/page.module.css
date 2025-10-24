@@ -1,0 +1,164 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blanco);
+  min-height: 100vh;
+}
+
+
+
+.heroContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* o fija si lo necesitás */
+}
+
+.cta {
+  position: absolute;
+  width: 70%;
+  bottom: -130px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  text-decoration: none;
+}
+
+.cta {
+  text-decoration: none;
+}
+
+.cta * {
+  text-decoration: none;
+}
+
+.h2 {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  font-size: 4rem;
+  color: var(--celeste);
+}
+
+.pContainer {
+  background: var(--azul);
+  width: 100%;
+
+}
+
+.pBox {
+  width: 80%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  margin-left: 10%;
+}
+
+.p {
+  font-size: 2.5rem;
+  color: var(--blanco);
+  text-align: center;
+}
+
+.BotonCitaContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+
+
+.oficinaContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 5rem auto;
+  width: 80%;
+}
+
+.oficinaLine {
+  width: 100px;
+  height: 4px;
+  background-color: var(--azul);
+  margin-top: 12px;
+  flex-shrink: 0;
+}
+
+.oficinaTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--azul);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.mapWrapper {
+  margin: 2rem auto;
+  width: 80%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mapsContainer {
+  width: 100%;
+}
+
+.carruselMobile{
+  display: none;
+}
+
+/* responsive */
+
+@media (max-width: 992px) {
+
+  .p {
+    font-size: 2rem;
+  }
+
+}
+
+
+@media (max-width: 785px) {
+  .h2 {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    font-size: 3rem;
+
+  }
+}
+
+@media (max-width: 768px) {
+
+  .carrusel {
+    display: none;
+  }
+
+  .carruselMobile{
+  display: block;
+}
+
+
+  .p {
+    font-size: 1.3rem;
+  }
+
+  .oficinaTitle {
+    font-size: 2rem;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .oficinaContainer {
+    flex-direction: column;
+  }
+
+  .oficinaTitle {
+    font-size: 1.4rem;
+  }
+
+  .mapWrapper {
+    height: 350px;
+  }
+}

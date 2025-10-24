@@ -1,0 +1,130 @@
+.pricingSection {
+  margin-top: 12rem;
+}
+
+.fullContainer {
+  padding: 0;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo Base de la Tarjeta */
+.priceCard {
+  height: 350px;
+  padding: 1.5rem;
+  /* Ajuste de padding */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* Bordes para la separación visual */
+  border-right: 1px solid var(--blanco);
+  border-bottom: 1px solid var(--blanco);
+}
+
+/* 1. Tarjeta AZUL OSCURO (Fondo Original) */
+.cardDark {
+  background-color: var(--azul);
+  color: var(--blanco);
+  /* Texto blanco */
+}
+
+/* 2. Tarjeta BLANCO (Invertida) */
+.cardLight {
+  background-color: var(--blanco);
+  color: var(--azul);
+  /* Texto oscuro */
+}
+
+/* Títulos y Precios: Ajustamos el color para que se vea bien en ambas versiones */
+.cardLight .title,
+.cardLight .price {
+  color: var(--azul);
+  font-weight: bold;
+  /* Los títulos y precios serán azules en la tarjeta blanca */
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.notes {
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: pre-line;
+  margin-bottom: 0;
+}
+
+
+
+/* --- LÓGICA RESPONSIVE DE BORDES (Importante) --- */
+
+/* Escritorio (>= md): Grid de 2xN */
+@media (min-width: 768px) {
+
+  /* Quitar borde derecho de las columnas de la derecha (2da columna de cada fila) */
+  .fullContainer .row>div:nth-child(2n) .priceCard {
+    border-right: none;
+  }
+
+  /* El borde inferior solo debe ser del color opuesto (para simular el "entrecruzado") */
+  /* El borde inferior para celdas oscuras será azul oscuro */
+  .cardDark {
+    border-bottom-color: var(--azul);
+  }
+
+  /* El borde inferior para celdas claras será blanco */
+  .cardLight {
+    border-bottom-color: var(--blanco);
+  }
+
+  /* Quitar borde inferior de la fila final (2 elementos finales) */
+  .fullContainer .row:first-child>div:nth-last-child(-n + 2) .priceCard {
+    border-bottom: none;
+  }
+}
+
+/* Móvil (<= sm): Grid de 1xN */
+@media (max-width: 767px) {
+  .priceCard {
+    border-right: none;
+    /* Quitamos el borde vertical en móvil */
+  }
+
+  /* Todos los bordes inferiores serán del color de fondo de la celda de arriba,
+     pero lo más fácil es usar un color neutro para la separación */
+  .priceCard {
+    border-bottom-color: var(--blanco);
+    /* Separación blanca entre celdas */
+  }
+
+  /* Quitar borde inferior de la última tarjeta */
+  .fullContainer .row:first-child>div:last-child .priceCard {
+    border-bottom: none;
+  }
+}
+
+/* Estilo de la franja azul final */
+.footerBanner {
+  background-color: var(--azul);
+  color: var(--blanco);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+}

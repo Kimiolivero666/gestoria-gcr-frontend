@@ -1,0 +1,33 @@
+.scrollButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #003366;
+  color: white;
+  border: none;
+  border: 1px solid var(--blanco);
+  border-radius: 50%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 0.8rem;
+  padding-top: 0.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.scrollButton:hover {
+  background-color: #0055aa;
+}
+
+@media screen and (max-width: 1200px){
+  .scrollButton{
+    font-size: 1rem;
+    padding-left: 0.7rem;
+padding-right: 0.7rem;
+padding-bottom: 0.6rem;
+padding-top: 0.3rem;
+border-radius: 50%;
+  }
+}

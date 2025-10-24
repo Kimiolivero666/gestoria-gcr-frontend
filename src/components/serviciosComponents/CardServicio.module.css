@@ -1,0 +1,95 @@
+.card {
+    width: 100%;
+    max-width: 900px;
+    margin-left: 4rem;
+    /* 👈 desplazamos la card hacia la izquierda */
+    padding: 1.5rem 0;
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.imageContainer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    /* acerca la imagen al texto */
+    align-items: center;
+}
+
+.image {
+    object-fit: cover;
+    width: 50%;
+    max-width: 320px;
+    height: 25rem;
+    margin-left: 0;
+    /* eliminamos el espacio extra */
+}
+
+.textContainer {
+    flex: 1;
+    margin-left: 1.5rem;
+    /* ajustá este valor según lo pegado que lo quieras */
+}
+
+.title {
+    color: var(--azul);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: var(--gris);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.button {
+    color: var(--blanco) !important;
+    background: var(--azul);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.4rem;
+}
+
+.button:hover {
+    transform: translateX(4px);
+    background: var(--azulHover);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        margin-left: 0rem;
+    }
+
+    .imageContainer {
+        justify-content: center;
+    }
+
+    .image {
+        width: 100%;
+        max-width: 400px;
+        /* 👈 todas tendrán este mismo ancho máximo */
+        height: 200px;
+        /* 👈 mismo alto en todos los casos */
+        object-fit: cover;
+        object-position: center;
+        margin: 0 auto;
+    }
+
+    .textContainer {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+}

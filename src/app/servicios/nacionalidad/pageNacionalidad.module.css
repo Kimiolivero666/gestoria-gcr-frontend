@@ -1,0 +1,58 @@
+.extranjeria {
+    padding-top: 12rem;
+}
+
+
+.section {
+    padding: 3rem 0;
+    background: var(--blanco);
+}
+
+.contenidoNacionalidad{
+    margin-top: 9rem;
+}
+
+.parrafoNacionalidad {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--gris);
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+}
+
+.parrafoNacionalidadBold {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--gris);
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+    font-weight: bold;
+}
+
+.subtituloNacionalidad{
+    color: var(--blanco);
+    background: var(--azul);
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+@media (max-width: 767px) {
+    .parrafoNacionalidad {
+        font-size: 1rem;
+    }
+
+.parrafoNacionalidadBold{
+    font-size: 1rem;
+}
+}
+
+@media (max-width: 600px) {
+    .extranjeria {
+        padding-top: 7rem;
+    }
+}

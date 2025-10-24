@@ -1,0 +1,200 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* centrar el carrusel */
+  margin-bottom: 3rem;
+}
+
+.carruselContainer {
+  position: relative;
+  width: 60%; /* controla el ancho total */
+}
+
+.carrusel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-snap-type: x mandatory;
+  align-items: flex-end;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 500px; /* 👈 fijo al tamaño máximo */
+}
+
+
+.carrusel::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: calc((100% - 2rem) / 3); /* 3 visibles siempre */
+  height: 200px;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.8s ease;
+}
+
+.item.big {
+  width: calc((100% - 2rem) / 3);
+  height: 500px; /* el ultimo visible se hace más alto */
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.title {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;              /* 👈 oculto */
+  transform: translateY(10px); /* un poquito desplazado */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.item.big .title {
+  opacity: 1;             /* 👈 aparece solo en el grande */
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+.controls {
+  position: absolute;
+  right: 0px;
+  top: 90%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* círculo */
+  background: var(--azul);
+  color: var(--blanco);
+  border: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.controls button:hover {
+  background: #0059c1;
+  transform: scale(1.1); /* efecto al pasar el mouse */
+}
+
+/* título a la derecha */
+.externalTitle {
+  flex: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--azul);
+  padding-top: 2rem;
+  padding-left: 1rem;
+}
+
+
+/* Responsive */
+
+
+/* 📱 Móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+  .carruselContainer {
+    width: 100%;
+  }
+
+  .carrusel {
+    height: 300px;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .item {
+    width: 80%;
+    height: 150px;
+  }
+
+  .item.big {
+    width: 80%;
+    height: 300px;
+  }
+
+  .controls {
+    right: 0;
+    top: 95%;
+    transform: translateY(-50%);
+  }
+
+  .externalTitle {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+/* 📲 Tablets (pantallas entre 600px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .carruselContainer {
+    width: 80%;
+  }
+
+  .item {
+    width: calc((100% - 1rem) / 2); /* 2 visibles */
+    height: 180px;
+  }
+
+  .item.big {
+    width: calc((100% - 1rem) / 2);
+    height: 400px;
+  }
+
+  .controls {
+    right: -50px;
+    top: 105%;
+  }
+
+  .externalTitle {
+    font-size: 1.3rem;
+  }
+
+}
+
+/* 🖥️ Escritorio grande (más de 1024px) */
+@media (min-width: 1025px) {
+  .carruselContainer {
+    width: 60%;
+  }
+
+  .item {
+    width: calc((100% - 2rem) / 3);
+    height: 200px;
+  }
+
+  .item.big {
+    height: 500px;
+  }
+
+  .controls {
+    right: -100px;
+  }
+}
+
+

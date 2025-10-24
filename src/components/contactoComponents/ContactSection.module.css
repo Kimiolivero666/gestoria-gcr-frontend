@@ -1,0 +1,71 @@
+.contactSection {
+  background: var(--blanco);
+  padding: 40px 0;
+}
+
+.formCol {
+  padding: 40px;
+}
+
+.label {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--gris);
+}
+
+.input,
+.textarea {
+  border: none;
+  border-bottom: 1px solid var(--gris);
+  border-radius: 0;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: none;
+}
+
+.textarea {
+  resize: none;
+  border: 1px solid var(--gris);
+}
+
+.submitBtn {
+  background-color: var(--celeste);
+  border: none;
+  padding: 10px 30px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  border-radius: 0;
+}
+
+.contactInfo {
+  margin-top: 30px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: var(--azul);
+  font-weight: bold;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin-right: 10px;
+  color: var(--blanco);
+  background: var(--azul);
+}
+
+.mapCol {
+  padding: 0;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: none;
+  min-height: 500px;
+}

@@ -1,0 +1,13 @@
+.servicios {
+    padding-top: 12rem;
+}
+
+.HeroSection {
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 600px){
+   .servicios {
+    padding-top: 7rem;
+} 
+}

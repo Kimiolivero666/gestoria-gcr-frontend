@@ -1,3 +1,7 @@
+/* ================================================= */
+/* === ESTILOS BASE (Desktop) Y COMPARTIDOS === */
+/* ================================================= */
+
 .navbar {
     position: absolute;
     top: 0;
@@ -12,34 +16,33 @@
 
 /* ✅ Estilo del navbar en el home */
 .homeNavbar {
-  background: transparent;
+    background: transparent;
 }
 
 .homeNavbar .firstLink,
 .homeNavbar .linkMenu,
 .homeNavbar .iconBars {
-  color: var(--blanco);
+    color: var(--blanco);
 }
 
 /* ✅ Estilo del navbar en las demás páginas */
 .pageNavbar {
-  background: var(--blanco);
-  margin-top: 3rem;
-  border-radius: 0;
+    background: var(--blanco);
+    margin-top: 3rem;
+    border-radius: 0;
 }
 
 .pageNavbar .firstLink,
 .pageNavbar .linkMenu,
 .pageNavbar .iconBars {
-  color: var(--gris);
+    color: var(--gris);
 }
 
 .pageNavbar .firstLink.activeLink,
 .pageNavbar .linkMenu.activeLink {
-  background: var(--azul);
-  color: var(--blanco);
+    background: var(--azul);
+    color: var(--blanco);
 }
-
 
 .navbarContenedor {
     display: flex;
@@ -64,9 +67,7 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-
 }
-
 
 .firstLink,
 .linkMenu {
@@ -80,6 +81,7 @@
     letter-spacing: 2px;
 }
 
+/* Estilos de hover que se aplicarán a los links normales y a la navegación principal */
 .firstLink:hover,
 .linkMenu:hover {
     transition: transform 0.3s ease-in-out;
@@ -99,8 +101,6 @@
     font-weight: 500;
 }
 
-
-
 .iconBars {
     color: var(--blanco);
     font-size: 50px;
@@ -115,32 +115,90 @@
     justify-content: center;
 }
 
+/* Class to disable scrolling */
+.noScroll {
+    overflow: hidden;
+}
+
+/* ========================================= */
+/* === Dropdown: Estilos Específicos (Desktop) === */
+/* ========================================= */
+
+.navItemDropdown {
+    position: relative;
+}
+
+.navItemDropdown .linkMenu {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dropdownToggleIcon {
+    display: none; 
+    cursor: pointer;
+    font-size: 1.2rem;
+}
 
 .dropdownMenu {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: none;
+    position: absolute;
+    top: 100%;
+    left: 0; 
+    z-index: 1000;
+    min-width: 200px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    visibility: hidden; 
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    padding: 10px 0;
+    margin-top: 5px; 
 }
 
-.dropdownMenu a {
-  color: #333;
-  text-decoration: none;
-  font-weight: 500;
+.navItemDropdown:hover .dropdownMenu,
+.dropdownMenuOpen { 
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.dropdownMenu a:hover {
-  background-color: #f8f9fa;
-  color: #000;
+.dropdownItem {
+    display: block;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gris);
+    text-decoration: none;
+    white-space: nowrap;
+    transform: none !important;
+    transition: none !important; 
+    margin: 0;
 }
 
-.dropdown .dropdown-toggle::after {
-  display: none; /* oculta el ícono de flecha de Bootstrap */
+.dropdownItem:hover, .activeDropdownItem {
+    background-color: var(--azul); 
+    color: var(--blanco);
+    transform: none; 
 }
 
+.homeNavbar .navItemDropdown .linkMenu.activeLink {
+    background: var(--azul);
+    color: var(--blanco);
+    transform: none;
+}
 
-/* responsive */
+.pageNavbar .navItemDropdown .linkMenu.activeLink {
+    background: var(--azul);
+    color: var(--blanco);
+    transform: none;
+}
 
+/* ========================================= */
+/* === Responsive: @media screen (1200px) === */
+/* ========================================= */
 
 @media screen and (max-width: 1200px) {
     .iconBars {
@@ -148,7 +206,8 @@
     }
 
     .menuBox {
-        height: 100vh;
+        overflow-y: auto; 
+        height: 100%; 
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -158,15 +217,16 @@
 
     .menu {
         width: 100%;
-        position: fixed; /* ← cambia a fixed */
+        position: fixed; 
         top: 6rem;
         left: 0;
         right: 0;
-        height: 100vh;
+        height: calc(100vh - 6rem);
         background: var(--blanco);
         transition: transform 0.3s ease-in-out;
         transform: translateX(100%);
         z-index: 2000;
+        overflow-y: auto;
     }
 
     .active {
@@ -184,32 +244,167 @@
         font-weight: 700;
         color: var(--azul);
         width: 250px;
+        transition: none;
+        transform: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .firstLink:hover,
+    .linkMenu:hover {
+        transform: none;
     }
 
+    /* Estilo para links individuales (INICIO, VIDEOS, etc.) activos */
     .firstLink.activeLink,
     .linkMenu.activeLink {
-        border-bottom: solid 4px var(--azul);
+        background: var(--azul); 
+        color: var(--blanco);
+        border-bottom: none; 
+        transform: none; 
+        padding: 10px 0; 
+        width: 250px; 
+        justify-content: center; 
+    }
+    
+    /* === Estilos del Dropdown en Responsive === */
+    
+    .navItemDropdown {
+        width: 250px;
+        margin-top: 30px;
+        padding: 0;
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        /* CLAVE: Quitamos cualquier background o borde del contenedor padre para evitar conflictos */
+        background: none; 
+        border-bottom: none;
+    }
+    
+    .dropdownHeader {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 10px 0;
+    }
+    
+    /* Estilo del texto "SERVICIOS" cuando NO está activo */
+    .dropdownHeader .linkMenu {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        transform: none;
+        transition: none;
+        color: var(--azul);
+    }
+    
+    /* CLAVE: Estilo del texto "SERVICIOS" cuando SÍ está activo (azul completo) */
+    .dropdownHeader .linkMenu.activeLink { 
+         background: var(--azul); 
+         color: var(--blanco);
+         border-bottom: none; 
+         transform: none;
+         padding: 10px 0; 
+         width: 100%; /* Ocupa el 100% de .dropdownHeader (que es 250px) */
+    }
+    
+    /* Mostrar y posicionar el icono de toggle */
+    .dropdownToggleIcon {
+        display: block;
+        color: var(--azul); 
+        position: absolute;
+        right: 15%;
+        top: 50%;
+        transform: translateY(-50%); 
+        font-size: 1.5rem;
+        z-index: 10;
+        padding: 0;
+    }
+    
+    /* El icono de toggle debe ser blanco cuando el link es azul/activo */
+    .dropdownHeader .linkMenu.activeLink + .dropdownToggleIcon {
+         color: var(--blanco);
+    }
+    
+    /* Contenedor del submenú (Acordeón) */
+    .dropdownMenu {
+        position: static; 
+        width: 100%;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.05); /* Fondo sutil para el submenú */
+        
+        max-height: 0; 
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out; 
+        
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        padding: 0;
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dropdownMenuOpen {
+        max-height: 500px;
+        padding: 5px 0;
     }
 
+    .dropdownItem {
+        transform: none !important;
+        transition: none !important;
+        text-align: center;
+        padding: 10px 15px; 
+        color: var(--azul); 
+        width: 80%; 
+        margin: 5px auto; 
+        border-radius: 5px;
+        font-weight: 500;
+    }
 
-  /* Cuando se abre el menú en el home, forzamos los colores oscuros o azules */
-  .homeNavbar .menuBox a {
-    color: var(--azul); 
-  }
+    .dropdownItem:hover, .dropdownItem.activeDropdownItem {
+        background-color: var(--azul); 
+        color: var(--blanco);
+        border-bottom: none;
+    }
+    
+    /* *** NOTA IMPORTANTE: Quitamos el bloque .navItemDropdown.activeLink redundante ***
+       *** La estilización activa la maneja ahora .dropdownHeader .linkMenu.activeLink ***
+    */
+    
+    /* Colores para links que no son dropdowns */
+    .homeNavbar .menuBox a {
+        color: var(--azul); 
+    }
 
-  .homeNavbar .menuBox .activeLink {
-    color: var(--blanco);
-  }
+    .homeNavbar .menuBox .activeLink {
+        color: var(--blanco);
+    }
 
-.pageNavbar .menuBox a {
-    color: var(--azul); 
+    .pageNavbar .menuBox a {
+        color: var(--azul); 
+    }
+
+    .pageNavbar .iconBars {
+        color: var(--azul);
+    }
+    
+    .homeNavbar .menu.active .dropdownItem {
+        color: var(--azul);
+    }
+    
+    .homeNavbar .menu.active .dropdownItem:hover,
+    .homeNavbar .menu.active .dropdownItem.activeDropdownItem {
+        background-color: var(--azul);
+        color: var(--blanco);
+    }
 }
 
-.pageNavbar .iconBars {
-    color: var(--azul);
-  }
-
-}
 
 @media screen and (max-width: 500px) {
     .textWhite {
@@ -221,14 +416,7 @@
     }
 
     .logo{
-    width: 50px;
-    height: 50px;
-}
-
-
-}
-
-/* Class to disable scrolling */
-.noScroll {
-    overflow: hidden;
+        width: 50px;
+        height: 50px;
+    }
 }

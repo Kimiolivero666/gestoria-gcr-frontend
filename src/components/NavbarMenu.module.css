@@ -360,7 +360,7 @@
         transition: none !important;
         text-align: center;
         padding: 10px 15px; 
-        color: var(--azul); 
+        color: var(--azul);
         width: 80%; 
         margin: 5px auto; 
         border-radius: 5px;
@@ -368,7 +368,7 @@
     }
 
     .dropdownItem:hover, .dropdownItem.activeDropdownItem {
-        background-color: var(--azul); 
+        background-color:#cedbf2;
         color: var(--blanco);
         border-bottom: none;
     }

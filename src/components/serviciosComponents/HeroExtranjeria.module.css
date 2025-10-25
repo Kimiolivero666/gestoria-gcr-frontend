@@ -1,65 +1,110 @@
 /* Contenedor principal para definir la altura y la disposición interna */
 .heroContainer {
     height: 400px;
-    /* Altura deseada */
     width: 100%;
     position: relative;
-
-    /* Usamos Flexbox para la disposición en dos columnas */
-    display: flex;
-    position: relative;
+    /* Usamos Flexbox para la disposición en dos columnas (Diseño Móvil/Base) */
+    display: flex; 
     overflow: hidden;
 }
 
-/* Bloque blanco con el texto (Text Block) */
+/* Bloque azul (Text Block) - Diseño Móvil/Base */
 .textBlock {
     width: 40%;
-    /* Ocupa el 50% del ancho base */
-    background-color: var(--azul);
-
+    background-color: var(--azul); 
     display: flex;
     align-items: center;
-    /* Centrado vertical */
     padding-left: 5%;
-
-    /* CLAVE: Esto jala el siguiente elemento hacia la izquierda, creando la superposición */
     z-index: 10;
-    /* Asegura que esté por encima de la imagen */
     margin-right: -100px;
-    /* Superposición de 100px. Ajusta este valor si quieres más o menos. */
 }
 
-/* Bloque azul con la imagen (Image Block) */
+/* Bloque Imagen (Image Block) - Diseño Móvil/Base */
 .imageBlock {
     filter: grayscale(100%);
     flex-grow: 1;
-    /* Ocupa el espacio restante */
-
-    background-image: url('/images/imgExtranjería.jpg');
-    /* ⚠️ Reemplaza con tu ruta */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 }
 
-/* Estilos para el texto */
+/* Estilos para el texto - Diseño Móvil/Base */
 .heroTitle {
     font-size: 4rem;
     padding-right: 8rem;
     font-weight: 400;
     color: var(--blanco);
-    background-color: var(--azul);
-    position: absolute;
+    background-color: var(--azul); 
+    /* ⚠️ CLAVE: Estilos que anularás para pantallas grandes */
+    position: absolute; 
     left: 30%;
 }
 
-/* responsive */
-
+/* responsive (Ejemplo de max-width 600px para móviles pequeños) */
 @media (max-width: 600px) {
     .heroTitle {
         font-size: 3rem;
         left: 10%;
         padding-right: 5rem;
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+/* 🚀 MEDIA QUERY FINAL: Estilos aplicados a partir de 768px (Desktop/Tablet grande) */
+/* ---------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    /* Cambia a disposición de apilamiento para que la imagen ocupe todo */
+    .heroContainer {
+        display: block; 
+        position: relative; 
+    }
+
+    /* 1. Ajustamos el Bloque de Texto (.textBlock) para que esté encima de la imagen y sin fondo azul */
+    .textBlock {
+        /* Desactiva el azul y la superposición */
+        background-color: transparent; 
+        margin-right: 0; 
+
+        /* Posiciona el bloque sobre la imagen */
+        width: 100%;
+        height: 100%; 
+        position: absolute; 
+        top: 0;
+        left: 0;
+
+        /* Asegura que esté visible */
+        z-index: 10; 
+
+        /* Centrado con Flexbox */
+        display: flex;
+        align-items: center; /* Centrado vertical */
+        justify-content: center; /* Centrado horizontal */
+        padding: 0; /* Limpiamos los paddings anteriores */
+    }
+
+    /* 2. Ajustamos el Bloque de Imagen (.imageBlock) para que ocupe todo el fondo */
+    .imageBlock {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* CLAVE: Lo mandamos al fondo */
+        z-index: 1; 
+        /* Para esta vista, podrías querer quitar el filtro de escala de grises si quieres más color */
+        /* filter: none; */
+    }
+
+    /* 3. Ajustamos el Título (.heroTitle) para quitar su fondo azul y centrarlo */
+    .heroTitle {
+        /* Quita el fondo azul del título */
+        background-color: transparent; 
+        /* Anula la posición absoluta del diseño base */
+        position: relative; 
+        left: 0; 
+        padding-right: 0; /* Limpiamos el padding derecho que lo desplazaba */
+        text-align: center;
+        /* El color blanco (color: var(--blanco)) ya estaba, solo lo aseguramos */
     }
 }

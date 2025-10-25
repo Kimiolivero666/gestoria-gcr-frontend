@@ -24,10 +24,10 @@ const ContactSection: React.FC = () => {
     setStatus('enviando');
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/contact`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/contacts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ data: formData }),
       });
 
       if (res.ok) {
@@ -118,12 +118,12 @@ const ContactSection: React.FC = () => {
           </Col>
 
           <Col md={6} className={styles.mapCol}>
-             <iframe  className={styles.map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5638.715506753905!2d2.7957674759102735!3d41.
+            <iframe className={styles.map} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5638.715506753905!2d2.7957674759102735!3d41.
 97625627123111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
 1!3m3!1m2!1s0x12bae73873043b8f%3A0xc401d0cfeb20c508!2sCarrer%20Major%2C%2040%2C%2017190%20Salt%2C%20Girona!5e1!3m2!1ses!2ses!4v17591
-38984544!5m2!1ses!2ses" width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" 
-referrerPolicy="no-referrer-when-downgrade"></iframe>
-             
+38984544!5m2!1ses!2ses" width="100%" height="450" style={{ border: 0 }} allowFullScreen loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"></iframe>
+
 
           </Col>
         </Row>

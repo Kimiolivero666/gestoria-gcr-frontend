@@ -17,7 +17,7 @@ const items: Item[] = [
   { id: 2, title: '', image: '/images/CAP.JPG' },
   { id: 3, title: 'Nacionalidad', image: '/images/Nacionalidad.jpg' },
   { id: 4, title: 'Extranjeria', image: '/images/Extranjería.jpg' },
-  { id: 5, title: 'Homologacion', image: '/images/HomologaciónDeEstudios.jpg' },
+  { id: 5, title: 'Homologacion de estudios', image: '/images/HomologaciónDeEstudios.jpg' },
   { id: 6, title: 'Ley segunda oportunidad', image: '/images/LeySegundaOportunidad.jpg' },
   { id: 7, title: 'Estancia de estudios', image: '/images/EstanciaEstudios.jpg' },
   { id: 8, title: 'DGT', image: '/images/DGT.jpg' },

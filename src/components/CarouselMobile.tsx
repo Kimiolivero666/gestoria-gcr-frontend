@@ -19,7 +19,7 @@ const CarouselMobile = () => {
         {
             src: '/images/HomologaciónDeEstudios.jpg',
             alt: 'Tercer slide',
-            title: 'Homologacion',
+            title: 'Homologacion de estudios',
         },
         {
             src: '/images/LeySegundaOportunidad.jpg',

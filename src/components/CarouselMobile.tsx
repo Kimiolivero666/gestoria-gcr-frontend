@@ -2,6 +2,7 @@
 
 import { Carousel } from 'react-bootstrap';
 import Image from 'next/image';
+import Link from 'next/link'; // 👈 Importa Link de Next.js
 import styles from "./CarouselMobile.module.css";
 
 const CarouselMobile = () => {
@@ -10,41 +11,49 @@ const CarouselMobile = () => {
             src: '/images/Nacionalidad.jpg',
             alt: 'Primer slide',
             title: 'Nacionalidad',
+            link: '/servicios/nacionalidad', 
         },
         {
             src: '/images/Extranjería.jpg',
             alt: 'Segundo slide',
-            title: 'Extranjeria',
+            title: 'Extranjería',
+            link: '/servicios/extranjeria',
         },
         {
             src: '/images/HomologaciónDeEstudios.jpg',
             alt: 'Tercer slide',
-            title: 'Homologacion de estudios',
+            title: 'Homologación de estudios',
+            link: '/servicios/homologacion',
         },
         {
             src: '/images/LeySegundaOportunidad.jpg',
             alt: 'Cuarto slide',
             title: 'Ley segunda oportunidad',
+            link: '/servicios/leySegundaOportunidad',
         },
         {
             src: '/images/EstanciaEstudios.jpg',
             alt: 'Quinto slide',
             title: 'Estancia de estudios',
+            link: '/servicios/estanciaDeEstudios',
         },
         {
             src: '/images/DGT.jpg',
             alt: 'Sexto slide',
             title: 'DGT',
+            link: '/servicios/dgt',
         },
         {
             src: '/images/CAP.JPG',
-            alt: 'Septimo slide',
+            alt: 'Séptimo slide',
             title: 'CAP',
+            link: '/servicios/cap',
         },
         {
             src: '/images/DivorcioNotarial.jpg',
-            alt: 'octavo slide',
+            alt: 'Octavo slide',
             title: 'Divorcio notarial',
+            link: '/servicios/divorcio',
         },
     ];
 
@@ -53,8 +62,10 @@ const CarouselMobile = () => {
             {slides.map((slide, index) => (
                 <Carousel.Item key={index}>
                     <div className={styles.slideContainer}>
-                        {/* 🔹 Título arriba a la izquierda */}
-                        <h3 className={styles.titleCarouselMobile}>{slide.title}</h3>
+                        {/* 🔹 Título con link */}
+                        <Link href={slide.link} className={styles.titleCarouselMobile}>
+                            <h3>{slide.title}</h3>
+                        </Link>
 
                         {/* Imagen */}
                         <div className={styles.imageContainer}>

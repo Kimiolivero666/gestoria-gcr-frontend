@@ -110,8 +110,14 @@
   color: var(--azul);
   padding-top: 2rem;
   padding-left: 1rem;
+  
 }
-
+.titleCarousel{
+  text-decoration: none;
+  color: var(--azul);
+  font-size: 1.5rem;
+font-weight: bold;
+}
 
 /* Responsive */
 

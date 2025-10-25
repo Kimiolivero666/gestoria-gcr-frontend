@@ -3,27 +3,27 @@
 import { useRef, useState, useEffect } from 'react';
 import styles from './Carrusel.module.css';
 import Image from 'next/image';
-import { IoIosArrowForward } from "react-icons/io";
-import { IoIosArrowBack } from "react-icons/io";
+import Link from 'next/link';
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 interface Item {
   id: number;
   title: string;
   image: string;
+  link: string;
 }
 
 const items: Item[] = [
-  { id: 1, title: 'Trabajo', image: '/images/DGT.jpg' },
-  { id: 2, title: '', image: '/images/CAP.JPG' },
-  { id: 3, title: 'Nacionalidad', image: '/images/Nacionalidad.jpg' },
-  { id: 4, title: 'Extranjeria', image: '/images/Extranjería.jpg' },
-  { id: 5, title: 'Homologacion de estudios', image: '/images/HomologaciónDeEstudios.jpg' },
-  { id: 6, title: 'Ley segunda oportunidad', image: '/images/LeySegundaOportunidad.jpg' },
-  { id: 7, title: 'Estancia de estudios', image: '/images/EstanciaEstudios.jpg' },
-  { id: 8, title: 'DGT', image: '/images/DGT.jpg' },
-  { id: 9, title: 'CAP', image: '/images/CAP.JPG' },
-  { id: 10, title: 'Divorcio notarial', image: '/images/DivorcioNotarial.jpg' },
-  
+  { id: 1, title: 'Trabajo', image: '/images/DGT.jpg', link: '/servicios/trabajo' },
+  { id: 2, title: '', image: '/images/CAP.JPG', link: '/cap' },
+  { id: 3, title: 'Nacionalidad', image: '/images/Nacionalidad.jpg', link: '/servicios/nacionalidad' },
+  { id: 4, title: 'Extranjería', image: '/images/Extranjería.jpg', link: '/servicios/extranjeria' },
+  { id: 5, title: 'Homologación de estudios', image: '/images/HomologaciónDeEstudios.jpg', link: '/servicios/homologacion' },
+  { id: 6, title: 'Ley segunda oportunidad', image: '/images/LeySegundaOportunidad.jpg', link: '/servicios/leySegundaOportunidad' },
+  { id: 7, title: 'Estancia de estudios', image: '/images/EstanciaEstudios.jpg', link: '/servicios/estanciaDeEstudios' },
+  { id: 8, title: 'DGT', image: '/images/DGT.jpg', link: '/servicios/dgt' },
+  { id: 9, title: 'CAP', image: '/images/CAP.JPG', link: '/servicios/cap' },
+  { id: 10, title: 'Divorcio notarial', image: '/images/DivorcioNotarial.jpg', link: '/servicios/divorcio' },
 ];
 
 export default function Carrusel() {
@@ -32,7 +32,7 @@ export default function Carrusel() {
 
   const scrollTo = (direction: 'left' | 'right') => {
     if (!containerRef.current) return;
-    const scrollAmount = containerRef.current.offsetWidth / 3; // scroll de 1 item
+    const scrollAmount = containerRef.current.offsetWidth / 3;
     containerRef.current.scrollBy({
       left: direction === 'right' ? scrollAmount : -scrollAmount,
       behavior: 'smooth',
@@ -90,9 +90,13 @@ export default function Carrusel() {
         </div>
       </div>
 
-      {/* título afuera, a la derecha */}
+      {/* título afuera, a la derecha, con link */}
       <div className={styles.externalTitle}>
-        {items[lastVisibleIndex]?.title}
+        {items[lastVisibleIndex]?.title && (
+          <Link href={items[lastVisibleIndex].link} className={styles.titleCarousel}>
+            {items[lastVisibleIndex].title}
+          </Link>
+        )}
       </div>
     </div>
   );

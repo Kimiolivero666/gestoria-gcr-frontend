@@ -115,6 +115,30 @@
     justify-content: center;
 }
 
+
+.dropdownMenu {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.dropdownMenu a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdownMenu a:hover {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+.dropdown .dropdown-toggle::after {
+  display: none; /* oculta el ícono de flecha de Bootstrap */
+}
+
+
 /* responsive */
 
 

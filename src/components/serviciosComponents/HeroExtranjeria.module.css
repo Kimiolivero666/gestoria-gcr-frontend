@@ -99,7 +99,7 @@
     /* 3. Ajustamos el Título (.heroTitle) para quitar su fondo azul y centrarlo */
     .heroTitle {
         /* Quita el fondo azul del título */
-        background-color: transparent; 
+        background-color: var(--azul); 
         /* Anula la posición absoluta del diseño base */
         position: relative; 
         left: 0; 

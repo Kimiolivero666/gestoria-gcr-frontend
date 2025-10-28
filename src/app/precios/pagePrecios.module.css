@@ -69,6 +69,18 @@
 }
 
 
+/* Estilo de la franja azul final */
+.footerBanner {
+  background-color: var(--azul);
+  color: var(--blanco);
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+}
+
 
 /* --- LÓGICA RESPONSIVE DE BORDES (Importante) --- */
 
@@ -115,16 +127,18 @@
   .fullContainer .row:first-child>div:last-child .priceCard {
     border-bottom: none;
   }
+
+  .footerBanner{
+    font-size: 1.2rem;
+  }
 }
 
-/* Estilo de la franja azul final */
-.footerBanner {
-  background-color: var(--azul);
-  color: var(--blanco);
-  font-size: 1.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
 
-}
+
+
+
+
+
+
+
+

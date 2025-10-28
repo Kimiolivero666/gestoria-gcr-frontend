@@ -69,3 +69,9 @@
   border: none;
   min-height: 500px;
 }
+
+@media (max-width: 425px){
+.infoItem span{
+  font-size: 0.9rem;
+}
+}

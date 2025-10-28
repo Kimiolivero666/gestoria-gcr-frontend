@@ -1,35 +1,36 @@
-// components/PricingGrid.tsx
+'use client'
 
 import { Col, Container, Row } from "react-bootstrap";
 import styles from "./pagePrecios.module.css";
 import { PriceItem, pricingData } from "./pricingData";
+import { useEffect, useState } from "react";
 
 
 // ... imports
 
-// Componente para una tarjeta de precio individual
-// Recibe el índice general (0-9)
-const PriceCard: React.FC<{ item: PriceItem, index: number }> = ({ item, index }) => {
-  
-  // Posición de la columna (0: izquierda, 1: derecha)
-  const colIndex = index % 2; 
-  // Posición de la fila (0, 1, 2, 3, 4)
+const PriceCard: React.FC<{ item: PriceItem; index: number }> = ({ item, index }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const handleChange = () => setIsMobile(mediaQuery.matches);
+    handleChange();
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
+  if (!item) return null;
+
+  const colIndex = index % 2;
   const rowIndex = Math.floor(index / 2);
 
-  // Lógica de Tablero de Ajedrez: (Fila + Columna)
-  // (Par + Par) = Par -> Dark
-  // (Par + Impar) = Impar -> Light
-  // (Impar + Par) = Impar -> Light
-  // (Impar + Impar) = Par -> Dark
-  const isDark = (rowIndex + colIndex) % 2 === 0; 
-  
-  // Determinamos la clase CSS
-  // En la imagen original, el patrón es Dark, Light, Light, Dark...
-  // La tarjeta 0 (0+0=0, Par) es AZUL OSCURO (Dark).
-  // La tarjeta 1 (0+1=1, Impar) es BLANCA (Light).
-  // La tarjeta 2 (1+0=1, Impar) es BLANCA (Light).
-  // La tarjeta 3 (1+1=2, Par) es AZUL OSCURO (Dark).
-  
+  // 🔹 Nueva lógica corregida
+  // En móvil → alterna de forma simple (azul/blanco/azul/blanco)
+  // En escritorio → patrón ajedrezado
+  const isDark = isMobile
+    ? index % 2 === 0 // móvil: alternado simple
+    : (rowIndex + colIndex) % 2 === 0; // escritorio: ajedrez
+
   const cardClass = isDark ? styles.cardDark : styles.cardLight;
 
   return (
@@ -40,6 +41,8 @@ const PriceCard: React.FC<{ item: PriceItem, index: number }> = ({ item, index }
     </div>
   );
 };
+
+
 
 const PricingGrid: React.FC = () => {
   return (

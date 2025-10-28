@@ -9,7 +9,7 @@ const page = () => {
             <div className={styles.HeroSection}>
                 <HeroExtranjeria
                     title="Contáctanos"
-                    imageUrl="/images/IMG_1070.jpeg"
+                    imageUrl="/images/contáctanos.jpg"
                 />
             </div>
             <Container>

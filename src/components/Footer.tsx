@@ -43,11 +43,11 @@ const Footer = forwardRef<HTMLElement, object>(function Footer(_, ref) {
 
 
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/gcr_asesores_y_abogados"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram /> Instagram
+              <FaInstagram aria-label="Cuenta de Instagram de GCR asesores y abogados"/> Instagram
             </a>
           </Col>
         </Row>

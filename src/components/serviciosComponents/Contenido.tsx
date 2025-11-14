@@ -22,7 +22,8 @@ interface Seccion {
 const Contenido: React.FC<ContenidoProps> = ({ categoriaSlug }) => {
   const [data, setData] = useState<Seccion[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+  // CORRECCIÓN en Contenido.tsx
+  const API_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "https://asesoría-legal-gcr.com";
 
   useEffect(() => {
     if (!categoriaSlug) {
@@ -71,7 +72,7 @@ const Contenido: React.FC<ContenidoProps> = ({ categoriaSlug }) => {
 
   // ⚠️ Sin contenido
   if (!data || data.length === 0) {
-    return <p>No hay contenido publicado para la categoría: {categoriaSlug}.</p>;
+    return <p className="text-center">No hay contenido publicado para la categoría: {categoriaSlug}.</p>;
   }
 
   // ✅ Render del contenido

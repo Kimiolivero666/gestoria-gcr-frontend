@@ -12,8 +12,12 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Mi Proyecto con el huaman de diego",
-  description: "Usando Raleway desde Google Fonts en Next.js",
+  title: "Servei integral GCR & Associats - Asesoría Legal y Gestoría en Girona",
+  description: "Gestoría administrativa y asesoría legal especializada en trámites de Extranjería para clientes en Girona y Perú",
+  keywords: "gestoría administrativa Girona, asesoría legal Girona, extranjería Girona, permiso de residencia peruanos, nacionalidad española",
+  icons: {
+    icon: '/icon.ico', 
+  },
 };
 
 export default function RootLayout({

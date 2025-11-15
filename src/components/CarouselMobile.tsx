@@ -14,7 +14,7 @@ const CarouselMobile = () => {
             link: '/servicios/nacionalidad', 
         },
         {
-            src: '/images/Extranjería.jpg',
+            src: '/images/Extranjería.JPG',
             alt: 'Segundo slide',
             title: 'Extranjería',
             link: '/servicios/extranjeria',
@@ -44,7 +44,7 @@ const CarouselMobile = () => {
             link: '/servicios/dgt',
         },
         {
-            src: '/images/CAP.jpg',
+            src: '/images/CAP.JPG',
             alt: 'Séptimo slide',
             title: 'CAP',
             link: '/servicios/cap',

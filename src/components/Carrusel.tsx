@@ -17,7 +17,7 @@ const items: Item[] = [
   { id: 1, title: 'Trabajo', image: '/images/DGT.jpg', link: '/servicios/trabajo' },
   { id: 2, title: '', image: '/images/CAP.JPG', link: '/cap' },
   { id: 3, title: 'Nacionalidad', image: '/images/Nacionalidad.jpg', link: '/servicios/nacionalidad' },
-  { id: 4, title: 'Extranjería', image: '/images/Extranjería.jpg', link: '/servicios/extranjeria' },
+  { id: 4, title: 'Extranjería', image: '/images/Extranjería.JPG', link: '/servicios/extranjeria' },
   { id: 5, title: 'Homologación de estudios', image: '/images/HomologaciónDeEstudios.jpg', link: '/servicios/homologacion' },
   { id: 6, title: 'Ley segunda oportunidad', image: '/images/LeySegundaOportunidad.jpg', link: '/servicios/leySegundaOportunidad' },
   { id: 7, title: 'Estancia de estudios', image: '/images/EstanciaEstudios.jpg', link: '/servicios/estanciaDeEstudios' },

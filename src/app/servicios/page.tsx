@@ -38,7 +38,7 @@ const page = () => {
           <CardServicio2
             title=" Extranjería"
             description="Gestionamos todos los trámites migratorios para ciudadanos no comunitarios, incluyendo permisos de residencia, visados, reagrupación familiar y la obtención de tarjetas de identidad de extranjero (TIE) en España."
-            imageSrc="/images/Extranjería.jpg"
+            imageSrc="/images/Extranjería.JPG"
             link="/servicios/extranjeria"
           />
 
@@ -82,7 +82,7 @@ const page = () => {
           <CardServicio
             title="CAP"
             description="Tramitamos la gestión y obtención del Certificado de Aptitud Profesional, obligatorio para conductores profesionales dedicados al transporte de mercancías o viajeros por carretera."
-            imageSrc="/images/CAP.jpg"
+            imageSrc="/images/CAP.JPG"
             link="/servicios/cap"
           />
 

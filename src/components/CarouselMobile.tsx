@@ -44,7 +44,7 @@ const CarouselMobile = () => {
             link: '/servicios/dgt',
         },
         {
-            src: '/images/CAP.JPG',
+            src: '/images/CAP.jpg',
             alt: 'Séptimo slide',
             title: 'CAP',
             link: '/servicios/cap',

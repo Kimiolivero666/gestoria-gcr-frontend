@@ -32,7 +32,7 @@ const page = () => {
           />
 
           <ImagenServicioMobile
-            imageSrc="/images/Extranjería.jpg"
+            imageSrc="/images/Extranjería.JPG"
           />
 
           <CardServicio2
